@@ -511,7 +511,9 @@ namespace CauchyProblem {
 
 			dataGridView1->Rows->Clear();
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			unsigned int i = 0;
+
+			while ((itx < xmax) && (i < maxIter))
 			{
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
@@ -536,12 +538,15 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
 				dataGridView1->Rows[i]->Cells[9]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[10]->Value = trueU - curPoint.y;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("–еальность", f1_list, Color::Red, ZedGraph::SymbolType::None);
@@ -556,8 +561,9 @@ namespace CauchyProblem {
 			dataGridView1->Rows->Clear();
 
 			double eps = Convert::ToDouble(textBox3->Text);
+			unsigned int i = 0;
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			while ((itx < xmax) && (i < maxIter))
 			{
 				RK1.setEps(eps);
 				point curPointCopy;
@@ -602,7 +608,7 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
@@ -612,6 +618,9 @@ namespace CauchyProblem {
 					dataGridView1->Rows[i]->Cells[8]->Value = 1;
 				dataGridView1->Rows[i]->Cells[9]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[10]->Value = trueU - curPoint.y;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("–еальность", f1_list, Color::Red, ZedGraph::SymbolType::None);
@@ -625,7 +634,9 @@ namespace CauchyProblem {
 
 			dataGridView1->Rows->Clear();
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			unsigned int i = 0;
+
+			while ((itx < xmax) && (i < maxIter))
 			{
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
@@ -649,10 +660,13 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("ќжидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
@@ -666,8 +680,9 @@ namespace CauchyProblem {
 			dataGridView1->Rows->Clear();
 
 			double eps = Convert::ToDouble(textBox3->Text);
+			unsigned int i = 0;
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			while ((itx < xmax) && (i < maxIter))
 			{
 				RK1.setEps(eps);
 				point curPointCopy;
@@ -710,7 +725,7 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
@@ -718,6 +733,9 @@ namespace CauchyProblem {
 					dataGridView1->Rows[i]->Cells[7]->Value = 1;
 				if (c2)
 					dataGridView1->Rows[i]->Cells[8]->Value = 1;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("ќжидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
@@ -738,7 +756,9 @@ namespace CauchyProblem {
 
 			dataGridView1->Rows->Clear();
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			unsigned int i = 0;
+
+			while ((itx < xmax) && (i < maxIter))
 			{
 				point curPointCopy1, curPointCopy2;
 				curPointCopy1.x = curPoint.x;
@@ -766,10 +786,13 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("ќжидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
@@ -790,7 +813,9 @@ namespace CauchyProblem {
 
 			dataGridView1->Rows->Clear();
 
-			for (unsigned int i = 1; (i < maxIter) && (itx < xmax); i++, itx += h)
+			unsigned int i = 0;
+
+			while ((itx < xmax) && (i < maxIter))
 			{
 				point curPointCopy1, curPointCopy2;
 				curPointCopy1.x = curPoint.x;
@@ -856,10 +881,13 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / 15.0 * 16.0;
+				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
 				dataGridView1->Rows[i]->Cells[6]->Value = h;
 				dataGridView1->Rows[i]->Cells[7]->Value = 0;
 				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+
+				i++;
+				itx += h;
 			}
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("ќжидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
