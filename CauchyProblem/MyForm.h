@@ -87,6 +87,27 @@ namespace CauchyProblem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ u;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ uv;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ iter;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ bxn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ maxolp;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ c1final;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ c2final;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ maxh;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ xmaxh;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ minh;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ xminh;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ maxuv;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ xmaxuv;
+
+
+
+
+
+
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -119,14 +140,6 @@ namespace CauchyProblem {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->zedGraphControl1 = (gcnew ZedGraph::ZedGraphControl());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->x = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->vcomp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -141,7 +154,28 @@ namespace CauchyProblem {
 			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->u = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->uv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->iter = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->bxn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->maxolp = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->c1final = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->c2final = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->maxh = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->xmaxh = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->minh = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->xminh = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->maxuv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->xmaxuv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// comboBox1
@@ -304,74 +338,6 @@ namespace CauchyProblem {
 			this->dataGridView1->TabIndex = 15;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(10, 278);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(221, 13);
-			this->label8->TabIndex = 16;
-			this->label8->Text = L"Правая граница отрезка интегрирования:";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(133, 294);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 17;
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(133, 333);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(100, 20);
-			this->textBox6->TabIndex = 18;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(11, 317);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(198, 13);
-			this->label9->TabIndex = 19;
-			this->label9->Text = L"Максимальное количество итераций:";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(12, 136);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(15, 13);
-			this->label10->TabIndex = 20;
-			this->label10->Text = L"u\'";
-			// 
-			// textBox7
-			// 
-			this->textBox7->Enabled = false;
-			this->textBox7->Location = System::Drawing::Point(133, 133);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(100, 20);
-			this->textBox7->TabIndex = 21;
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(12, 169);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(89, 13);
-			this->label11->TabIndex = 22;
-			this->label11->Text = L"Коэффициент a:";
-			// 
-			// textBox8
-			// 
-			this->textBox8->Enabled = false;
-			this->textBox8->Location = System::Drawing::Point(133, 166);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(100, 20);
-			this->textBox8->TabIndex = 23;
-			this->textBox8->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox8_TextChanged);
-			// 
 			// i
 			// 
 			this->i->HeaderText = L"i";
@@ -442,11 +408,147 @@ namespace CauchyProblem {
 			this->uv->HeaderText = L"u-v";
 			this->uv->Name = L"uv";
 			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(10, 278);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(221, 13);
+			this->label8->TabIndex = 16;
+			this->label8->Text = L"Правая граница отрезка интегрирования:";
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(133, 294);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(100, 20);
+			this->textBox5->TabIndex = 17;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(133, 333);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(100, 20);
+			this->textBox6->TabIndex = 18;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(11, 317);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(198, 13);
+			this->label9->TabIndex = 19;
+			this->label9->Text = L"Максимальное количество итераций:";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(12, 136);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(15, 13);
+			this->label10->TabIndex = 20;
+			this->label10->Text = L"u\'";
+			// 
+			// textBox7
+			// 
+			this->textBox7->Enabled = false;
+			this->textBox7->Location = System::Drawing::Point(133, 133);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(100, 20);
+			this->textBox7->TabIndex = 21;
+			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(12, 169);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(89, 13);
+			this->label11->TabIndex = 22;
+			this->label11->Text = L"Коэффициент a:";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Enabled = false;
+			this->textBox8->Location = System::Drawing::Point(133, 166);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(100, 20);
+			this->textBox8->TabIndex = 23;
+			this->textBox8->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox8_TextChanged);
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
+				this->iter, this->bxn,
+					this->maxolp, this->c1final, this->c2final, this->maxh, this->xmaxh, this->minh, this->xminh, this->maxuv, this->xmaxuv
+			});
+			this->dataGridView2->Location = System::Drawing::Point(15, 427);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(1149, 150);
+			this->dataGridView2->TabIndex = 24;
+			// 
+			// iter
+			// 
+			this->iter->HeaderText = L"Количество итераций ";
+			this->iter->Name = L"iter";
+			// 
+			// bxn
+			// 
+			this->bxn->HeaderText = L"b - xn";
+			this->bxn->Name = L"bxn";
+			// 
+			// maxolp
+			// 
+			this->maxolp->HeaderText = L"Максимум модуля ОЛП";
+			this->maxolp->Name = L"maxolp";
+			// 
+			// c1final
+			// 
+			this->c1final->HeaderText = L"Общее число удвоений шага";
+			this->c1final->Name = L"c1final";
+			// 
+			// c2final
+			// 
+			this->c2final->HeaderText = L"Общее число делений шага";
+			this->c2final->Name = L"c2final";
+			// 
+			// maxh
+			// 
+			this->maxh->HeaderText = L"Максимальный шаг";
+			this->maxh->Name = L"maxh";
+			// 
+			// xmaxh
+			// 
+			this->xmaxh->HeaderText = L"x, при котором шаг был максимальным";
+			this->xmaxh->Name = L"xmaxh";
+			// 
+			// minh
+			// 
+			this->minh->HeaderText = L"Минимальный шаг";
+			this->minh->Name = L"minh";
+			// 
+			// xminh
+			// 
+			this->xminh->HeaderText = L"x, при котором шаг был минимальным";
+			this->xminh->Name = L"xminh";
+			// 
+			// maxuv
+			// 
+			this->maxuv->HeaderText = L"Максимум модуля оценки глобальной погрешности";
+			this->maxuv->Name = L"maxuv";
+			// 
+			// xmaxuv
+			// 
+			this->xmaxuv->HeaderText = L"x, при котором достигается максимум модуля ГП";
+			this->xmaxuv->Name = L"xmaxuv";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1176, 433);
+			this->ClientSize = System::Drawing::Size(1176, 593);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->textBox7);
@@ -474,6 +576,7 @@ namespace CauchyProblem {
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -521,6 +624,19 @@ namespace CauchyProblem {
 
 		double(*func)(point& out);												// для выбора задачи
 
+		// для статистики
+		unsigned int finalIter;
+		double lastPoint;
+		double maxOLP = 0;
+		unsigned int sumC1 = 0;
+		unsigned int sumC2 = 0;
+		double maxh = 0;
+		double xmaxh;
+		double minh = h;
+		double xminh;
+		double maxUV = 0;
+		double xmaxUV;
+
 		switch (selectedTask)
 		{
 		case 0:
@@ -538,6 +654,7 @@ namespace CauchyProblem {
 
 		f2_list->Add(curPoint.x, curPoint.y);
 
+		dataGridView2->Rows->Clear();
 
 		if ((func == task1) && (!isEps))
 		{
@@ -582,7 +699,41 @@ namespace CauchyProblem {
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
+
+				if (abs(trueU - curPoint.y) > maxUV)
+				{
+					maxUV = abs(trueU - curPoint.y);
+					xmaxUV = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
+			dataGridView2->Rows[0]->Cells[9]->Value = maxUV;
+			dataGridView2->Rows[0]->Cells[10]->Value = xmaxUV;
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("Истинное решение", f1_list, Color::Red, ZedGraph::SymbolType::None);
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::DarkCyan, ZedGraph::SymbolType::None);
@@ -648,15 +799,59 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
+				{
 					dataGridView1->Rows[i]->Cells[10]->Value = 1;
+					sumC1 += 1;
+				}
+
 				if (c2)
+				{
 					dataGridView1->Rows[i]->Cells[11]->Value = 1;
+					sumC2 += 1;
+				}
+
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
+
+				if (abs(trueU - curPoint.y) > maxUV)
+				{
+					maxUV = abs(trueU - curPoint.y);
+					xmaxUV = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[3]->Value = sumC2;
+			dataGridView2->Rows[0]->Cells[4]->Value = sumC1;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
+			dataGridView2->Rows[0]->Cells[9]->Value = maxUV;
+			dataGridView2->Rows[0]->Cells[10]->Value = xmaxUV;
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("Истинное решение", f1_list, Color::Red, ZedGraph::SymbolType::None);
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::DarkCyan, ZedGraph::SymbolType::None);
@@ -701,7 +896,33 @@ namespace CauchyProblem {
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::Coral, ZedGraph::SymbolType::None);
 		}
@@ -763,13 +984,48 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
+				{
 					dataGridView1->Rows[i]->Cells[10]->Value = 1;
+					sumC1 += 1;
+				}
+
 				if (c2)
+				{
 					dataGridView1->Rows[i]->Cells[11]->Value = 1;
+					sumC2 += 1;
+				}
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[3]->Value = sumC2;
+			dataGridView2->Rows[0]->Cells[4]->Value = sumC1;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::Coral, ZedGraph::SymbolType::None);
 		}
@@ -834,7 +1090,33 @@ namespace CauchyProblem {
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue1 * ORDER) > maxOLP) maxOLP = abs(controlValue1 * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("Фазовый портрет", f1_list, Color::Coral, ZedGraph::SymbolType::None);
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение 1", f2_list, Color::SeaGreen, ZedGraph::SymbolType::None);
@@ -937,18 +1219,55 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
+				{
 					dataGridView1->Rows[i]->Cells[10]->Value = 1;
+					sumC1 += 1;
+				}
+
 				if (c2)
+				{
 					dataGridView1->Rows[i]->Cells[11]->Value = 1;
+					sumC2 += 1;
+				}
 
 				i++;
 				itx += h;
+
+				// статистика
+				finalIter = i;
+				lastPoint = itx;
+				if (abs(controlValue1 * ORDER) > maxOLP) maxOLP = abs(controlValue1 * ORDER);
+
+				if (h > maxh)
+				{
+					maxh = h;
+					xmaxh = itx;
+				}
+
+				if (h < minh)
+				{
+					minh = h;
+					xminh = itx;
+				}
 			}
+
+			dataGridView2->Rows->Add();
+			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
+			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
+			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
+			dataGridView2->Rows[0]->Cells[3]->Value = sumC2;
+			dataGridView2->Rows[0]->Cells[4]->Value = sumC1;
+			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
+			dataGridView2->Rows[0]->Cells[7]->Value = minh;
+			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
 
 			ZedGraph::LineItem Curve1 = panel->AddCurve("Фазовый портрет", f1_list, Color::Coral, ZedGraph::SymbolType::None);
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение 1", f2_list, Color::SeaGreen, ZedGraph::SymbolType::None);
 			ZedGraph::LineItem Curve3 = panel->AddCurve("Численное решение 2", f3_list, Color::BlueViolet, ZedGraph::SymbolType::None);
 		}
+
+		lastPoint = xmax - lastPoint;
 
 		panel->XAxis->Scale->Min = xmin - 1;
 		panel->XAxis->Scale->Max = xmax + 1;
