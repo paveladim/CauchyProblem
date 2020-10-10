@@ -1,0 +1,4 @@
+D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxprojAssemblyReference.cache
+D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.MyForm.resources
+D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.GenerateResource.cache
+D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.CopyComplete

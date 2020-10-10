@@ -58,22 +58,36 @@ namespace CauchyProblem {
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox6;
 	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  x;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  v;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  v2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  vv2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  ОЛП;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  h;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  C1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  C2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  u;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  uv;
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::TextBox^  textBox7;
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::TextBox^  textBox8;
-	private: System::ComponentModel::IContainer^  components;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ОЛП;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ h;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ u;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ uv;
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
@@ -105,17 +119,6 @@ namespace CauchyProblem {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->zedGraphControl1 = (gcnew ZedGraph::ZedGraphControl());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->x = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->v = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->v2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vv2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ОЛП = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->h = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->u = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->uv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -124,6 +127,20 @@ namespace CauchyProblem {
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->x = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vcomp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vv2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vcomp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vv2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ОЛП = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->h = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->u = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->uv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -276,69 +293,16 @@ namespace CauchyProblem {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(14) {
 				this->i, this->x,
-					this->v, this->v2, this->vv2, this->ОЛП, this->h, this->C1, this->C2, this->u, this->uv
+					this->vcomp1, this->v2comp1, this->vv2comp1, this->vcomp2, this->v2comp2, this->vv2comp2, this->ОЛП, this->h, this->C1, this->C2,
+					this->u, this->uv
 			});
 			this->dataGridView1->Location = System::Drawing::Point(733, 15);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(431, 406);
 			this->dataGridView1->TabIndex = 15;
-			// 
-			// i
-			// 
-			this->i->HeaderText = L"i";
-			this->i->Name = L"i";
-			// 
-			// x
-			// 
-			this->x->HeaderText = L"x";
-			this->x->Name = L"x";
-			// 
-			// v
-			// 
-			this->v->HeaderText = L"v";
-			this->v->Name = L"v";
-			// 
-			// v2
-			// 
-			this->v2->HeaderText = L"v2";
-			this->v2->Name = L"v2";
-			// 
-			// vv2
-			// 
-			this->vv2->HeaderText = L"v-v2";
-			this->vv2->Name = L"vv2";
-			// 
-			// ОЛП
-			// 
-			this->ОЛП->HeaderText = L"ОЛП";
-			this->ОЛП->Name = L"ОЛП";
-			// 
-			// h
-			// 
-			this->h->HeaderText = L"h";
-			this->h->Name = L"h";
-			// 
-			// C1
-			// 
-			this->C1->HeaderText = L"C1";
-			this->C1->Name = L"C1";
-			// 
-			// C2
-			// 
-			this->C2->HeaderText = L"C2";
-			this->C2->Name = L"C2";
-			// 
-			// u
-			// 
-			this->u->HeaderText = L"u";
-			this->u->Name = L"u";
-			// 
-			// uv
-			// 
-			this->uv->HeaderText = L"u-v";
-			this->uv->Name = L"uv";
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// label8
 			// 
@@ -408,6 +372,76 @@ namespace CauchyProblem {
 			this->textBox8->TabIndex = 23;
 			this->textBox8->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox8_TextChanged);
 			// 
+			// i
+			// 
+			this->i->HeaderText = L"i";
+			this->i->Name = L"i";
+			// 
+			// x
+			// 
+			this->x->HeaderText = L"x";
+			this->x->Name = L"x";
+			// 
+			// vcomp1
+			// 
+			this->vcomp1->HeaderText = L"v(1)";
+			this->vcomp1->Name = L"vcomp1";
+			// 
+			// v2comp1
+			// 
+			this->v2comp1->HeaderText = L"v2(1)";
+			this->v2comp1->Name = L"v2comp1";
+			// 
+			// vv2comp1
+			// 
+			this->vv2comp1->HeaderText = L"v(1)-v2(1)";
+			this->vv2comp1->Name = L"vv2comp1";
+			// 
+			// vcomp2
+			// 
+			this->vcomp2->HeaderText = L"v(2)";
+			this->vcomp2->Name = L"vcomp2";
+			// 
+			// v2comp2
+			// 
+			this->v2comp2->HeaderText = L"v2(2)";
+			this->v2comp2->Name = L"v2comp2";
+			// 
+			// vv2comp2
+			// 
+			this->vv2comp2->HeaderText = L"v(2)-v2(2)";
+			this->vv2comp2->Name = L"vv2comp2";
+			// 
+			// ОЛП
+			// 
+			this->ОЛП->HeaderText = L"ОЛП";
+			this->ОЛП->Name = L"ОЛП";
+			// 
+			// h
+			// 
+			this->h->HeaderText = L"h";
+			this->h->Name = L"h";
+			// 
+			// C1
+			// 
+			this->C1->HeaderText = L"C1";
+			this->C1->Name = L"C1";
+			// 
+			// C2
+			// 
+			this->C2->HeaderText = L"C2";
+			this->C2->Name = L"C2";
+			// 
+			// u
+			// 
+			this->u->HeaderText = L"u";
+			this->u->Name = L"u";
+			// 
+			// uv
+			// 
+			this->uv->HeaderText = L"u-v";
+			this->uv->Name = L"uv";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -460,6 +494,7 @@ namespace CauchyProblem {
 		// Создаём список точек
 		ZedGraph::PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
 		ZedGraph::PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
+		ZedGraph::PointPairList^ f3_list = gcnew ZedGraph::PointPairList();
 
 		double xmin = Convert::ToDouble(textBox1->Text);						// извлекаем начальные условия
 		double xmax = Convert::ToDouble(textBox5->Text);
@@ -529,7 +564,7 @@ namespace CauchyProblem {
 				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
-				double difference = curPoint.y - curPointCopy.y;
+				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
 				double trueU = f1(itx, c);
 
 				dataGridView1->Rows->Add();
@@ -537,20 +572,20 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
-				dataGridView1->Rows[i]->Cells[9]->Value = trueU;
-				dataGridView1->Rows[i]->Cells[10]->Value = trueU - curPoint.y;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
+				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
+				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve1 = panel->AddCurve("Реальность", f1_list, Color::Red, ZedGraph::SymbolType::None);
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve1 = panel->AddCurve("Истинное решение", f1_list, Color::Red, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::DarkCyan, ZedGraph::SymbolType::None);
 		}
 
 		if ((func == task1) && (isEps))
@@ -599,7 +634,7 @@ namespace CauchyProblem {
 				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
-				double difference = curPoint.y - curPointCopy.y;
+				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
 				double trueU = f1(itx, c);
 
 				dataGridView1->Rows->Add();
@@ -607,29 +642,28 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
-					dataGridView1->Rows[i]->Cells[7]->Value = 1;
+					dataGridView1->Rows[i]->Cells[10]->Value = 1;
 				if (c2)
-					dataGridView1->Rows[i]->Cells[8]->Value = 1;
-				dataGridView1->Rows[i]->Cells[9]->Value = trueU;
-				dataGridView1->Rows[i]->Cells[10]->Value = trueU - curPoint.y;
+					dataGridView1->Rows[i]->Cells[11]->Value = 1;
+				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
+				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve1 = panel->AddCurve("Реальность", f1_list, Color::Red, ZedGraph::SymbolType::None);
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve1 = panel->AddCurve("Истинное решение", f1_list, Color::Red, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::DarkCyan, ZedGraph::SymbolType::None);
 		}
 
 		if ((func == task2) && (!isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
 			f2_list->Add(curPoint.x, curPoint.y);
 
 			dataGridView1->Rows->Clear();
@@ -652,29 +686,28 @@ namespace CauchyProblem {
 				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
-				double difference = curPoint.y - curPointCopy.y;
+				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::Coral, ZedGraph::SymbolType::None);
 		}
 
 		if ((func == task2) && (isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
 			f2_list->Add(curPoint.x, curPoint.y);
 
 			dataGridView1->Rows->Clear();
@@ -717,42 +750,43 @@ namespace CauchyProblem {
 
 				f2_list->Add(curPoint.x, curPoint.y);
 
-				double difference = curPoint.y - curPointCopy.y;
+				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
-					dataGridView1->Rows[i]->Cells[7]->Value = 1;
+					dataGridView1->Rows[i]->Cells[10]->Value = 1;
 				if (c2)
-					dataGridView1->Rows[i]->Cells[8]->Value = 1;
+					dataGridView1->Rows[i]->Cells[11]->Value = 1;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::Coral, ZedGraph::SymbolType::None);
 		}
 
 		if ((func == task3) && (!isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
-			f2_list->Add(curPoint.x, curPoint.y);
-
-			double a = Convert::ToDouble(textBox8->Text);
-			RK1.seta(a);
-
 			double v2 = Convert::ToDouble(textBox7->Text);
 			point curPoint2;
 			curPoint2.x = xmin;
 			curPoint2.y = v2;
+
+			f1_list->Add(curPoint.y, curPoint2.y);
+			f2_list->Add(curPoint.x, curPoint.y);
+			f3_list->Add(curPoint2.x, curPoint2.y);
+
+			double a = Convert::ToDouble(textBox8->Text);
+			RK1.seta(a);
 
 			dataGridView1->Rows->Clear();
 
@@ -776,40 +810,50 @@ namespace CauchyProblem {
 				curPointCopy2 = RK1.Calculate(curPointCopy2, func);
 				RK1.seth(h);
 
-				f2_list->Add(curPoint.y, curPoint2.y);
+				f1_list->Add(curPoint.y, curPoint2.y);
+				f2_list->Add(curPoint.x, curPoint.y);
+				f3_list->Add(curPoint2.x, curPoint2.y);
 
-				double difference = curPoint.y - curPointCopy1.y;
+				double controlValue1 = abs(RK1.giveControlValue(curPoint, curPointCopy1));
+				double controlValue2 = abs(RK1.giveControlValue(curPoint2, curPointCopy2));
+				controlValue1 = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint.y - curPointCopy1.y);
+				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
+				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve1 = panel->AddCurve("Фазовый портрет", f1_list, Color::Coral, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение 1", f2_list, Color::SeaGreen, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve3 = panel->AddCurve("Численное решение 2", f3_list, Color::BlueViolet, ZedGraph::SymbolType::None);
 		}
 
 		if ((func == task3) && (isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
-			f2_list->Add(curPoint.x, curPoint.y);
-
-			double a = Convert::ToDouble(textBox8->Text);
-			RK1.seta(a);
-
 			double v2 = Convert::ToDouble(textBox7->Text);
 			point curPoint2;
 			curPoint2.x = xmin;
 			curPoint2.y = v2;
+
+			f1_list->Add(curPoint.y, curPoint2.y);
+			f2_list->Add(curPoint.x, curPoint.y);
+			f3_list->Add(curPoint2.x, curPoint2.y);
+
+			double a = Convert::ToDouble(textBox8->Text);
+			RK1.seta(a);
 
 			dataGridView1->Rows->Clear();
 
@@ -871,26 +915,39 @@ namespace CauchyProblem {
 					c2 = true;
 				}
 
-				f2_list->Add(curPoint.y, curPoint2.y);
+				f1_list->Add(curPoint.y, curPoint2.y);
+				f2_list->Add(curPoint.x, curPoint.y);
+				f3_list->Add(curPoint2.x, curPoint2.y);
 
-				double difference = curPoint.y - curPointCopy1.y;
+				double controlValue1 = abs(RK1.giveControlValue(curPoint, curPointCopy1));
+				double controlValue2 = abs(RK1.giveControlValue(curPoint2, curPointCopy2));
+				controlValue1 = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = difference;
-				dataGridView1->Rows[i]->Cells[5]->Value = difference / (ORDER - 1) * ORDER;
-				dataGridView1->Rows[i]->Cells[6]->Value = h;
-				dataGridView1->Rows[i]->Cells[7]->Value = 0;
-				dataGridView1->Rows[i]->Cells[8]->Value = 0;
+				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint.y - curPointCopy1.y);
+				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
+				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * ORDER;
+				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[10]->Value = 0;
+				dataGridView1->Rows[i]->Cells[11]->Value = 0;
+				if (c1)
+					dataGridView1->Rows[i]->Cells[10]->Value = 1;
+				if (c2)
+					dataGridView1->Rows[i]->Cells[11]->Value = 1;
 
 				i++;
 				itx += h;
 			}
 
-			ZedGraph::LineItem Curve2 = panel->AddCurve("Ожидание", f2_list, Color::Blue, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve1 = panel->AddCurve("Фазовый портрет", f1_list, Color::Coral, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение 1", f2_list, Color::SeaGreen, ZedGraph::SymbolType::None);
+			ZedGraph::LineItem Curve3 = panel->AddCurve("Численное решение 2", f3_list, Color::BlueViolet, ZedGraph::SymbolType::None);
 		}
 
 		panel->XAxis->Scale->Min = xmin - 1;
@@ -957,6 +1014,10 @@ namespace CauchyProblem {
 	{
 		if (comboBox1->SelectedIndex == 2) this->textBox8->Enabled = true;
 		else this->textBox8->Enabled = false;
+	}
+
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) 
+	{
 	}
 };
 }
