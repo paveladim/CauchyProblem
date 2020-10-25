@@ -1,15 +1,15 @@
 ﻿  MyForm.cpp
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(695,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(696,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(799,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(800,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(894,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(895,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(984,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(985,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1088,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1089,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1219,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1220,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(693,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(694,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(796,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(797,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(895,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(896,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(985,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(986,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(1089,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(1090,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(1220,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\MyForm.h(1221,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  CauchyProblem.vcxproj -> D:\prog\CauchyProblem\Debug\CauchyProblem.exe
+  CauchyProblem.vcxproj -> C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\Debug\CauchyProblem.exe

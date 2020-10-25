@@ -678,15 +678,13 @@ namespace CauchyProblem {
 				curPointCopy = RK1.Calculate(curPointCopy, func);
 				RK1.seth(h);
 
-				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
 				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
-				double trueU = f1(itx, c);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
-				dataGridView1->Rows[i]->Cells[1]->Value = itx;
+				dataGridView1->Rows[i]->Cells[1]->Value = curPoint.x;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
@@ -694,11 +692,14 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
+
+				itx += h;
+
+				f1_list->Add(itx, f1(itx, c));
+				double trueU = f1(itx, c);
+
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
-
-				i++;
-				itx += h;
 
 				// статистика
 				finalIter = i;
@@ -722,16 +723,14 @@ namespace CauchyProblem {
 					maxUV = abs(trueU - curPoint.y);
 					xmaxUV = itx;
 				}
+
+				i++;
 			}
 
 			dataGridView2->Rows->Add();
 			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
 			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
 			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
-			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
-			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
-			dataGridView2->Rows[0]->Cells[7]->Value = minh;
-			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
 			dataGridView2->Rows[0]->Cells[9]->Value = maxUV;
 			dataGridView2->Rows[0]->Cells[10]->Value = xmaxUV;
 
@@ -782,15 +781,13 @@ namespace CauchyProblem {
 					c2 = true;
 				}
 
-				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
 				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
-				double trueU = f1(itx, c);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
-				dataGridView1->Rows[i]->Cells[1]->Value = itx;
+				dataGridView1->Rows[i]->Cells[1]->Value = curPoint.x;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
@@ -810,11 +807,13 @@ namespace CauchyProblem {
 					sumC2 += 1;
 				}
 
+				itx += h;
+
+				f1_list->Add(itx, f1(itx, c));
+				double trueU = f1(itx, c);
+
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
-
-				i++;
-				itx += h;
 
 				// статистика
 				finalIter = i;
@@ -838,6 +837,8 @@ namespace CauchyProblem {
 					maxUV = abs(trueU - curPoint.y);
 					xmaxUV = itx;
 				}
+
+				i++;
 			}
 
 			dataGridView2->Rows->Add();

@@ -2,3 +2,7 @@ D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxprojAssemblyReference
 D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.MyForm.resources
 D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.GenerateResource.cache
 D:\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.CopyComplete
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxprojAssemblyReference.cache
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.MyForm.resources
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.GenerateResource.cache
+C:\Users\Pavel\Documents\Pavel\prog\CauchyProblem\CauchyProblem\Debug\CauchyProblem.vcxproj.CopyComplete
