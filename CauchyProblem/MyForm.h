@@ -658,15 +658,20 @@ namespace CauchyProblem {
 
 		if ((func == task1) && (!isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
-			f2_list->Add(curPoint.x, curPoint.y);
-
 			dataGridView1->Rows->Clear();
-
 			unsigned int i = 0;
+
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[12]->Value = v;
+			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint.y;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
+				i++;
+				itx += h;
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
 				curPointCopy.y = curPoint.y;
@@ -678,15 +683,15 @@ namespace CauchyProblem {
 				curPointCopy = RK1.Calculate(curPointCopy, func);
 				RK1.seth(h);
 
-				f1_list->Add(itx, f1(itx, c));
+				f1_list->Add(curPoint.x, f1(curPoint.x, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
 				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
-				double trueU = f1(itx, c);
+				double trueU = f1(curPoint.x, c);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
-				dataGridView1->Rows[i]->Cells[1]->Value = itx;
+				dataGridView1->Rows[i]->Cells[1]->Value = curPoint.x;
 				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
 				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
@@ -697,12 +702,9 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
 
-				i++;
-				itx += h;
-
 				// статистика
 				finalIter = i;
-				lastPoint = itx;
+				lastPoint = curPoint.x;
 				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
 
 				if (h > maxh)
@@ -714,13 +716,13 @@ namespace CauchyProblem {
 				if (h < minh)
 				{
 					minh = h;
-					xminh = itx;
+					xminh = curPoint.x;
 				}
 
 				if (abs(trueU - curPoint.y) > maxUV)
 				{
 					maxUV = abs(trueU - curPoint.y);
-					xmaxUV = itx;
+					xmaxUV = curPoint.x;
 				}
 			}
 
@@ -741,17 +743,23 @@ namespace CauchyProblem {
 
 		if ((func == task1) && (isEps))
 		{
-			f1_list->Add(itx, f1(itx, c));
-			f2_list->Add(curPoint.x, curPoint.y);
-
 			dataGridView1->Rows->Clear();
 
 			double eps = Convert::ToDouble(textBox3->Text);
 			unsigned int i = 0;
 
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[12]->Value = v;
+			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint.y;
+
 			while ((itx < xmax) && (i < maxIter))
 			{
 				RK1.setEps(eps);
+				i++;
+				itx += h;
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
 				curPointCopy.y = curPoint.y;
@@ -813,13 +821,10 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
 				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
 
-				i++;
-				itx += h;
-
 				// статистика
 				finalIter = i;
 				lastPoint = itx;
-				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+				if ((abs(controlValue * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue * ORDER);
 
 				if (h > maxh)
 				{
@@ -859,14 +864,19 @@ namespace CauchyProblem {
 
 		if ((func == task2) && (!isEps))
 		{
-			f2_list->Add(curPoint.x, curPoint.y);
-
 			dataGridView1->Rows->Clear();
 
 			unsigned int i = 0;
 
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+
 			while ((itx < xmax) && (i < maxIter))
 			{
+				i++;
+				itx += h;
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
 				curPointCopy.y = curPoint.y;
@@ -878,7 +888,6 @@ namespace CauchyProblem {
 				curPointCopy = RK1.Calculate(curPointCopy, func);
 				RK1.seth(h);
 
-				f1_list->Add(itx, f1(itx, c));
 				f2_list->Add(curPoint.x, curPoint.y);
 
 				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
@@ -894,35 +903,20 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 
-				i++;
-				itx += h;
-
 				// статистика
 				finalIter = i;
 				lastPoint = itx;
 				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
-
-				if (h > maxh)
-				{
-					maxh = h;
-					xmaxh = itx;
-				}
-
-				if (h < minh)
-				{
-					minh = h;
-					xminh = itx;
-				}
 			}
 
 			dataGridView2->Rows->Add();
 			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
 			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
 			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
-			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
-			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
-			dataGridView2->Rows[0]->Cells[7]->Value = minh;
-			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
+			dataGridView2->Rows[0]->Cells[5]->Value = h;
+			dataGridView2->Rows[0]->Cells[6]->Value = xmin;
+			dataGridView2->Rows[0]->Cells[7]->Value = h;
+			dataGridView2->Rows[0]->Cells[8]->Value = xmin;
 
 			ZedGraph::LineItem Curve2 = panel->AddCurve("Численное решение", f2_list, Color::Coral, ZedGraph::SymbolType::None);
 		}
@@ -934,11 +928,18 @@ namespace CauchyProblem {
 			dataGridView1->Rows->Clear();
 
 			double eps = Convert::ToDouble(textBox3->Text);
+			RK1.setEps(eps);
 			unsigned int i = 0;
+
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				RK1.setEps(eps);
+				i++;
+				itx += h;
 				point curPointCopy;
 				curPointCopy.x = curPoint.x;
 				curPointCopy.y = curPoint.y;
@@ -995,13 +996,10 @@ namespace CauchyProblem {
 					sumC2 += 1;
 				}
 
-				i++;
-				itx += h;
-
 				// статистика
 				finalIter = i;
 				lastPoint = itx;
-				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+				if ((abs(controlValue * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue * ORDER);
 
 				if (h > maxh)
 				{
@@ -1048,8 +1046,16 @@ namespace CauchyProblem {
 
 			unsigned int i = 0;
 
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+
 			while ((itx < xmax) && (i < maxIter))
 			{
+				i++;
+				itx += h;
 				point curPointCopy1, curPointCopy2;
 				curPointCopy1.x = curPoint.x;
 				curPointCopy1.y = curPoint.y;
@@ -1087,9 +1093,6 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
-
-				i++;
-				itx += h;
 
 				// статистика
 				finalIter = i;
@@ -1136,13 +1139,23 @@ namespace CauchyProblem {
 
 			double a = Convert::ToDouble(textBox8->Text);
 			RK1.seta(a);
+			double eps = Convert::ToDouble(textBox3->Text);
+			RK1.setEps(eps);
 
 			dataGridView1->Rows->Clear();
 
 			unsigned int i = 0;
 
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = i;
+			dataGridView1->Rows[i]->Cells[1]->Value = itx;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+
 			while ((itx < xmax) && (i < maxIter))
 			{
+				i++;
+				itx += h;
 				point curPointCopy1, curPointCopy2;
 				curPointCopy1.x = curPoint.x;
 				curPointCopy1.y = curPoint.y;
@@ -1230,13 +1243,10 @@ namespace CauchyProblem {
 					sumC2 += 1;
 				}
 
-				i++;
-				itx += h;
-
 				// статистика
 				finalIter = i;
 				lastPoint = itx;
-				if (abs(controlValue1 * ORDER) > maxOLP) maxOLP = abs(controlValue1 * ORDER);
+				if ((abs(controlValue1 * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue1 * ORDER);
 
 				if (h > maxh)
 				{

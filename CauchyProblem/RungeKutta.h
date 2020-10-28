@@ -1,7 +1,7 @@
 #pragma once
 
-const unsigned int ORDER = 16;
-const unsigned int ORDERV = 32;
+const double ORDER = 16.0;
+const double ORDERV = 32;
 
 struct point
 {

@@ -46,15 +46,18 @@ point RungeKutta::Calculate(point& out, double(*func)(point&), double a)
 	curPoint.y = outY + 0.5 * h * k1;
 
 	k2 = func(curPoint);
-	curPoint.y = curPoint.y + 0.5 * h * (k2 - k1);
+	curPoint.y = outY + 0.5 * h * k2;
+	// curPoint.y = curPoint.y + 0.5 * h * (k2 - k1);
 
 	k3 = func(curPoint);
-	curPoint.x = curPoint.x + 0.5 * h;
-	curPoint.y = curPoint.y + (k3 - 0.5 * k2) * h;
+	curPoint.x = outX + h;
+	curPoint.y = outY + h * k3;
+	//curPoint.x = curPoint.x + 0.5 * h;
+	//curPoint.y = curPoint.y + (k3 - 0.5 * k2) * h;
 
 	k4 = func(curPoint);
 
-	curPoint.y = out.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
+	curPoint.y = outY + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
 	return curPoint;
 }
 
