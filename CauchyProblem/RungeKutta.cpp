@@ -16,12 +16,12 @@ double task2(point& out)
 {
 	double x = out.x;
 	double y = out.y;
-	return (servFunc(x) * y * y + y - y * y * y * sin(10 * x));
+	return ((servFunc(x) * y * y) + y - (y * y * y * sin(10 * x * PI / 180)));
 }
 
 double task3(point& out1)
 {
-	return -sin(out1.y);
+	return -sin(out1.y * PI / 180);
 }
 
 double forTask3(point& out2)
@@ -33,31 +33,49 @@ RungeKutta::RungeKutta() : h(0.5), eps(0.1)
 {
 }
 
-point RungeKutta::Calculate(point& out, double(*func)(point&), double a)
+point RungeKutta::Calculate(point& out, double(*func)(point&))
 {
 	double k1, k2, k3, k4;
-	double outX = out.x;
-	double outY = out.y;
 
 	k1 = func(out);
 
 	point curPoint;
-	curPoint.x = outX + 0.5 * h;
-	curPoint.y = outY + 0.5 * h * k1;
+	curPoint.x = out.x + 0.5 * h;
+	curPoint.y = out.y + 0.5 * h * k1;
 
 	k2 = func(curPoint);
-	curPoint.y = outY + 0.5 * h * k2;
-	// curPoint.y = curPoint.y + 0.5 * h * (k2 - k1);
+	curPoint.y = out.y + 0.5 * h * k2;
 
 	k3 = func(curPoint);
-	curPoint.x = outX + h;
-	curPoint.y = outY + h * k3;
-	//curPoint.x = curPoint.x + 0.5 * h;
-	//curPoint.y = curPoint.y + (k3 - 0.5 * k2) * h;
+	curPoint.x = out.x + h;
+	curPoint.y = out.y + h * k3;
 
 	k4 = func(curPoint);
 
-	curPoint.y = outY + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
+	curPoint.y = out.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
+	return curPoint;
+}
+
+point RungeKutta::CalculateSystem(point& out1, point& out2, double(*func)(point&))
+{
+	double k1, k2, k3, k4;
+
+	k1 = func(out2);
+
+	point curPoint;
+	curPoint.x = out2.x + 0.5 * h;
+	curPoint.y = out2.y + 0.5 * h * k1;
+
+	k2 = func(curPoint);
+	curPoint.y = out2.y + 0.5 * h * k2;
+
+	k3 = func(curPoint);
+	curPoint.x = out2.x + h;
+	curPoint.y = out2.y + h * k3;
+
+	k4 = func(curPoint);
+
+	curPoint.y = out1.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
 	return curPoint;
 }
 
@@ -90,7 +108,7 @@ point RungeKutta::localErrorControlForSystem(const point& out1, const point& out
 	double controlValue1 = abs(giveControlValue(out1, out11));
 	double controlValue2 = abs(giveControlValue(out2, out21));
 
-	double controlValue = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
+	double controlValue = controlValue1 + controlValue2;
 
 	if (controlValue < eps / ORDERV)
 	{

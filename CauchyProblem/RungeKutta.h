@@ -2,6 +2,7 @@
 
 const double ORDER = 16.0;
 const double ORDERV = 32;
+const double PI = 3.141592653589793;
 
 struct point
 {
@@ -16,7 +17,8 @@ class RungeKutta
 public:
 	RungeKutta();
 
-	point Calculate(point& out, double(*func)(point&), double a = 1.0);
+	point Calculate(point& out, double(*func)(point&));
+	point CalculateSystem(point& out1, point& out2, double(*func)(point&));
 	void seth(const double& out) { h = out; }
 	double giveh() { return h; }
 	void setEps(const double& outEps) { eps = outEps; }
