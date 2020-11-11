@@ -1,7 +1,7 @@
 #pragma once
 
-const double ORDER = 16.0;
-const double ORDERV = 32;
+const unsigned int ORDER = 16;
+const unsigned int ORDERV = 32;
 const double PI = 3.141592653589793;
 
 struct point

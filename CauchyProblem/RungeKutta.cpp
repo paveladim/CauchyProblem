@@ -2,9 +2,9 @@
 #include <cmath>
 
 // Вспомогательная функция для вычисления функции Task2
-double servFunc(const double& x)
+double servFunc(const double& x, const double& y)
 {
-	return (1.0 / (1.0 + x * x * x * x));
+	return ((y * y) / (1.0 + x * x * x * x));
 }
 
 double task1(point& out)
@@ -16,7 +16,7 @@ double task2(point& out)
 {
 	double x = out.x;
 	double y = out.y;
-	return ((servFunc(x) * y * y) + y - (y * y * y * sin(10 * x * PI / 180)));
+	return ((servFunc(x, y)) + y - (y * y * y * sin(10 * x * PI / 180)));
 }
 
 double task3(point& out1)
@@ -62,21 +62,27 @@ point RungeKutta::CalculateSystem(point& out1, point& out2, double(*func)(point&
 
 	k1 = func(out2);
 
-	point curPoint;
-	curPoint.x = out2.x + 0.5 * h;
-	curPoint.y = out2.y + 0.5 * h * k1;
+	point curPoint1;
+	point curPoint2;
+	curPoint1.x = out1.x + 0.5 * h;
+	curPoint2.x = out2.x + 0.5 * h;
+	curPoint1.y = out1.y + 0.5 * h * k1;
+	curPoint2.y = out2.y + 0.5 * h * k1;
 
-	k2 = func(curPoint);
-	curPoint.y = out2.y + 0.5 * h * k2;
+	k2 = func(curPoint2);
+	curPoint1.y = out1.y + 0.5 * h * k2;
+	curPoint2.y = out2.y + 0.5 * h * k2;
 
-	k3 = func(curPoint);
-	curPoint.x = out2.x + h;
-	curPoint.y = out2.y + h * k3;
+	k3 = func(curPoint2);
+	curPoint1.x = out1.x + h;
+	curPoint2.x = out2.x + h;
+	curPoint1.y = out1.y + h * k3;
+	curPoint2.y = out2.y + h * k3;
 
-	k4 = func(curPoint);
+	k4 = func(curPoint2);
 
-	curPoint.y = out1.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
-	return curPoint;
+	curPoint1.y = out1.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
+	return curPoint1;
 }
 
 double RungeKutta::giveControlValue(const point& out1, const point& out2)
@@ -88,7 +94,9 @@ point RungeKutta::localErrorConrol(const point& out1, const point& out2, const p
 {
 	double controlValue = abs(giveControlValue(out1, out2));
 
-	if (controlValue < eps / ORDERV)
+	double eps1 = eps / ORDERV;
+
+	if (controlValue < eps1)
 	{
 		h = 2.0 * h;
 		return out1;
@@ -105,12 +113,13 @@ point RungeKutta::localErrorConrol(const point& out1, const point& out2, const p
 
 point RungeKutta::localErrorControlForSystem(const point& out1, const point& out11, const point& out2, const point& out21, const point& outBack)
 {
-	double controlValue1 = abs(giveControlValue(out1, out11));
-	double controlValue2 = abs(giveControlValue(out2, out21));
+	double controlValue1 = giveControlValue(out1, out11);
+	double controlValue2 = giveControlValue(out2, out21);
+	double controlValue = sqrt(controlValue1*controlValue1 + controlValue2*controlValue2);
 
-	double controlValue = controlValue1 + controlValue2;
+	double eps1 = eps / ORDERV;
 
-	if (controlValue < eps / ORDERV)
+	if (controlValue < eps1)
 	{
 		h = 2.0 * h;
 		point finalDecision;

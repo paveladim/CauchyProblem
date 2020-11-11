@@ -73,20 +73,20 @@ namespace CauchyProblem {
 	private: System::Windows::Forms::TextBox^  textBox7;
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::TextBox^  textBox8;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ОЛП;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ h;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ u;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ uv;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ iter;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ bxn;
@@ -99,6 +99,21 @@ namespace CauchyProblem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ xminh;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ maxuv;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ xmaxuv;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vcomp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2comp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vv2comp2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ОЛП1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ h;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ u;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ uv;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ОЛП2;
 
 
 
@@ -140,20 +155,6 @@ namespace CauchyProblem {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->zedGraphControl1 = (gcnew ZedGraph::ZedGraphControl());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->x = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vcomp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->v2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vv2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vcomp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->v2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vv2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ОЛП = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->h = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->u = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->uv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -174,6 +175,21 @@ namespace CauchyProblem {
 			this->xminh = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->maxuv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->xmaxuv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->x = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vcomp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vv2comp1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vcomp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vv2comp2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ОЛП1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->h = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->u = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->uv = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ОЛП2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -327,86 +343,16 @@ namespace CauchyProblem {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(14) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(15) {
 				this->i, this->x,
-					this->vcomp1, this->v2comp1, this->vv2comp1, this->vcomp2, this->v2comp2, this->vv2comp2, this->ОЛП, this->h, this->C1, this->C2,
-					this->u, this->uv
+					this->vcomp1, this->v2comp1, this->vv2comp1, this->vcomp2, this->v2comp2, this->vv2comp2, this->ОЛП1, this->h, this->C1, this->C2,
+					this->u, this->uv, this->ОЛП2
 			});
 			this->dataGridView1->Location = System::Drawing::Point(733, 15);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(431, 406);
+			this->dataGridView1->Size = System::Drawing::Size(714, 406);
 			this->dataGridView1->TabIndex = 15;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
-			// 
-			// i
-			// 
-			this->i->HeaderText = L"i";
-			this->i->Name = L"i";
-			// 
-			// x
-			// 
-			this->x->HeaderText = L"x";
-			this->x->Name = L"x";
-			// 
-			// vcomp1
-			// 
-			this->vcomp1->HeaderText = L"v(1)";
-			this->vcomp1->Name = L"vcomp1";
-			// 
-			// v2comp1
-			// 
-			this->v2comp1->HeaderText = L"v2(1)";
-			this->v2comp1->Name = L"v2comp1";
-			// 
-			// vv2comp1
-			// 
-			this->vv2comp1->HeaderText = L"v(1)-v2(1)";
-			this->vv2comp1->Name = L"vv2comp1";
-			// 
-			// vcomp2
-			// 
-			this->vcomp2->HeaderText = L"v(2)";
-			this->vcomp2->Name = L"vcomp2";
-			// 
-			// v2comp2
-			// 
-			this->v2comp2->HeaderText = L"v2(2)";
-			this->v2comp2->Name = L"v2comp2";
-			// 
-			// vv2comp2
-			// 
-			this->vv2comp2->HeaderText = L"v(2)-v2(2)";
-			this->vv2comp2->Name = L"vv2comp2";
-			// 
-			// ОЛП
-			// 
-			this->ОЛП->HeaderText = L"ОЛП";
-			this->ОЛП->Name = L"ОЛП";
-			// 
-			// h
-			// 
-			this->h->HeaderText = L"h";
-			this->h->Name = L"h";
-			// 
-			// C1
-			// 
-			this->C1->HeaderText = L"C1";
-			this->C1->Name = L"C1";
-			// 
-			// C2
-			// 
-			this->C2->HeaderText = L"C2";
-			this->C2->Name = L"C2";
-			// 
-			// u
-			// 
-			this->u->HeaderText = L"u";
-			this->u->Name = L"u";
-			// 
-			// uv
-			// 
-			this->uv->HeaderText = L"u-v";
-			this->uv->Name = L"uv";
 			// 
 			// label8
 			// 
@@ -485,7 +431,7 @@ namespace CauchyProblem {
 			});
 			this->dataGridView2->Location = System::Drawing::Point(15, 427);
 			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(1149, 150);
+			this->dataGridView2->Size = System::Drawing::Size(1432, 150);
 			this->dataGridView2->TabIndex = 24;
 			// 
 			// iter
@@ -543,11 +489,86 @@ namespace CauchyProblem {
 			this->xmaxuv->HeaderText = L"x, при котором достигается максимум модуля ГП";
 			this->xmaxuv->Name = L"xmaxuv";
 			// 
+			// i
+			// 
+			this->i->HeaderText = L"i";
+			this->i->Name = L"i";
+			// 
+			// x
+			// 
+			this->x->HeaderText = L"x";
+			this->x->Name = L"x";
+			// 
+			// vcomp1
+			// 
+			this->vcomp1->HeaderText = L"v(1)";
+			this->vcomp1->Name = L"vcomp1";
+			// 
+			// v2comp1
+			// 
+			this->v2comp1->HeaderText = L"v2(1)";
+			this->v2comp1->Name = L"v2comp1";
+			// 
+			// vv2comp1
+			// 
+			this->vv2comp1->HeaderText = L"v(1)-v2(1)";
+			this->vv2comp1->Name = L"vv2comp1";
+			// 
+			// vcomp2
+			// 
+			this->vcomp2->HeaderText = L"v(2)";
+			this->vcomp2->Name = L"vcomp2";
+			// 
+			// v2comp2
+			// 
+			this->v2comp2->HeaderText = L"v2(2)";
+			this->v2comp2->Name = L"v2comp2";
+			// 
+			// vv2comp2
+			// 
+			this->vv2comp2->HeaderText = L"v(2)-v2(2)";
+			this->vv2comp2->Name = L"vv2comp2";
+			// 
+			// ОЛП1
+			// 
+			this->ОЛП1->HeaderText = L"ОЛП(1)";
+			this->ОЛП1->Name = L"ОЛП1";
+			// 
+			// h
+			// 
+			this->h->HeaderText = L"h";
+			this->h->Name = L"h";
+			// 
+			// C1
+			// 
+			this->C1->HeaderText = L"C1";
+			this->C1->Name = L"C1";
+			// 
+			// C2
+			// 
+			this->C2->HeaderText = L"C2";
+			this->C2->Name = L"C2";
+			// 
+			// u
+			// 
+			this->u->HeaderText = L"u";
+			this->u->Name = L"u";
+			// 
+			// uv
+			// 
+			this->uv->HeaderText = L"u-v";
+			this->uv->Name = L"uv";
+			// 
+			// ОЛП2
+			// 
+			this->ОЛП2->HeaderText = L"ОЛП(2)";
+			this->ОЛП2->Name = L"ОЛП2";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1176, 593);
+			this->ClientSize = System::Drawing::Size(1459, 593);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label11);
@@ -613,9 +634,10 @@ namespace CauchyProblem {
 		RungeKutta RK1;
 		RK1.seth(h);
 
-		point curPoint;
-		curPoint.x = xmin;
-		curPoint.y = v;
+		// инициализация начальной точки
+		point curPoint1;
+		curPoint1.x = xmin;
+		curPoint1.y = v;
 
 		double itx = xmin;														// для итерации
 
@@ -631,12 +653,13 @@ namespace CauchyProblem {
 		unsigned int sumC1 = 0;
 		unsigned int sumC2 = 0;
 		double maxh = 0;
-		double xmaxh;
+		double xmaxh = xmin;
 		double minh = h;
-		double xminh;
+		double xminh = xmin;
 		double maxUV = 0;
 		double xmaxUV;
 
+		// выбор задачи
 		switch (selectedTask)
 		{
 		case 0:
@@ -649,11 +672,6 @@ namespace CauchyProblem {
 			func = task3;
 		}
 
-		if (func == task1)
-			f1_list->Add(itx, f1(itx, c));
-
-		f2_list->Add(curPoint.x, curPoint.y);
-
 		dataGridView2->Rows->Clear();
 
 		if ((func == task1) && (!isEps))
@@ -662,79 +680,74 @@ namespace CauchyProblem {
 			unsigned int i = 0;
 			RK1.seta(1);
 
+			f1_list->Add(itx, f1(itx, c));
+			f2_list->Add(curPoint1.x, curPoint1.y);
+
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
 			dataGridView1->Rows[i]->Cells[1]->Value = itx;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 			dataGridView1->Rows[i]->Cells[12]->Value = v;
-			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint.y;
+			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint1.y;
+
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
-				point curPointCopy;
-				curPointCopy.x = curPoint.x;
-				curPointCopy.y = curPoint.y;
+				point curPointCopy1;
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
 				// считаем точку по обычному
-				curPoint = RK1.Calculate(curPoint, func);
+				curPoint1 = RK1.Calculate(curPoint1, func);
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
 				RK1.seth(h);
 
-				f1_list->Add(curPoint.x, f1(curPoint.x, c));
-				f2_list->Add(curPoint.x, curPoint.y);
+				f1_list->Add(curPoint1.x, f1(curPoint1.x, c));
+				f2_list->Add(curPoint1.x, curPoint1.y);
 
-				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
-				double trueU = f1(curPoint.x, c);
+				double controlValue = RK1.giveControlValue(curPoint1, curPointCopy1);
+				double trueU = f1(curPoint1.x, c);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
-				dataGridView1->Rows[i]->Cells[1]->Value = curPoint.x;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
-				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[1]->Value = curPoint1.x;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint1.y - curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
-				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
+				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint1.y;
 
-				// статистика
-				finalIter = i;
-				lastPoint = curPoint.x;
 				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
 
-				if (h > maxh)
+				if (abs(trueU - curPoint1.y) > maxUV)
 				{
-					maxh = h;
-					xmaxh = itx;
+					maxUV = abs(trueU - curPoint1.y);
+					xmaxUV = itx;
 				}
 
-				if (h < minh)
-				{
-					minh = h;
-					xminh = curPoint.x;
-				}
+				finalIter = i;
+				lastPoint = itx;
 
-				if (abs(trueU - curPoint.y) > maxUV)
-				{
-					maxUV = abs(trueU - curPoint.y);
-					xmaxUV = curPoint.x;
-				}
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
 			dataGridView2->Rows[0]->Cells[0]->Value = finalIter;
 			dataGridView2->Rows[0]->Cells[1]->Value = xmax - lastPoint;
 			dataGridView2->Rows[0]->Cells[2]->Value = maxOLP;
-			dataGridView2->Rows[0]->Cells[5]->Value = maxh;
-			dataGridView2->Rows[0]->Cells[6]->Value = xmaxh;
-			dataGridView2->Rows[0]->Cells[7]->Value = minh;
-			dataGridView2->Rows[0]->Cells[8]->Value = xminh;
+			dataGridView2->Rows[0]->Cells[5]->Value = h;
+			dataGridView2->Rows[0]->Cells[6]->Value = xminh;
+			dataGridView2->Rows[0]->Cells[7]->Value = h;
+			dataGridView2->Rows[0]->Cells[8]->Value = xmaxh;
 			dataGridView2->Rows[0]->Cells[9]->Value = maxUV;
 			dataGridView2->Rows[0]->Cells[10]->Value = xmaxUV;
 
@@ -751,61 +764,72 @@ namespace CauchyProblem {
 			RK1.seta(1);
 			unsigned int i = 0;
 
+			f1_list->Add(itx, f1(itx, c));
+			f2_list->Add(curPoint1.x, curPoint1.y);
+
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
 			dataGridView1->Rows[i]->Cells[1]->Value = itx;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 			dataGridView1->Rows[i]->Cells[12]->Value = v;
-			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint.y;
+			dataGridView1->Rows[i]->Cells[13]->Value = v - curPoint1.y;
+
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
-				point curPointCopy;
-				curPointCopy.x = curPoint.x;
-				curPointCopy.y = curPoint.y;
-				point curPointBack;
-				curPointBack.x = curPoint.x;
-				curPointBack.y = curPoint.y;
+				point curPointCopy1;
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
+				point curPointBack1;
+				curPointBack1.x = curPoint1.x;
+				curPointBack1.y = curPoint1.y;
+
 				// считаем точку по обычному
-				curPoint = RK1.Calculate(curPoint, func);
+				curPoint1 = RK1.Calculate(curPoint1, func);
+
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
 				RK1.seth(h);
 				bool c1 = false;
 				bool c2 = false;
 
 				// корректировка шага
-				curPoint = RK1.localErrorConrol(curPoint, curPointCopy, curPointBack);
+				curPoint1 = RK1.localErrorConrol(curPoint1, curPointCopy1, curPointBack1);
+				double oldh = h;
 				if (0.5 * h == RK1.giveh())
 				{
-					itx -= h * 0.5;
+					itx -= h;
 					h = h * 0.5;
 					c1 = true;
 				}
 				else if (2.0 * h == RK1.giveh())
 				{
+					f1_list->Add(itx, f1(itx, c));
+					f2_list->Add(curPoint1.x, curPoint1.y);
 					h = 2.0 * h;
 					c2 = true;
 				}
+				else if (h == RK1.giveh())
+				{
+					f1_list->Add(itx, f1(itx, c));
+					f2_list->Add(curPoint1.x, curPoint1.y);
+				}
 
-				f1_list->Add(itx, f1(itx, c));
-				f2_list->Add(curPoint.x, curPoint.y);
-
-				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
+				double controlValue = RK1.giveControlValue(curPoint1, curPointCopy1);
 				double trueU = f1(itx, c);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
-				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint1.y - curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
-				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[9]->Value = oldh;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
@@ -821,30 +845,33 @@ namespace CauchyProblem {
 				}
 
 				dataGridView1->Rows[i]->Cells[12]->Value = trueU;
-				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint.y;
+				dataGridView1->Rows[i]->Cells[13]->Value = trueU - curPoint1.y;
 
-				// статистика
-				finalIter = i;
-				lastPoint = itx;
 				if ((abs(controlValue * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue * ORDER);
 
-				if (h > maxh)
+				if (abs(trueU - curPoint1.y) > maxUV)
 				{
-					maxh = h;
+					maxUV = abs(trueU - curPoint1.y);
+					xmaxUV = itx;
+				}
+
+				if (oldh > maxh)
+				{
+					maxh = oldh;
 					xmaxh = itx;
 				}
 
-				if (h < minh)
+				if (oldh < minh)
 				{
-					minh = h;
+					minh = oldh;
 					xminh = itx;
 				}
 
-				if (abs(trueU - curPoint.y) > maxUV)
-				{
-					maxUV = abs(trueU - curPoint.y);
-					xmaxUV = itx;
-				}
+				finalIter = i;
+				lastPoint = itx;
+
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
@@ -871,45 +898,53 @@ namespace CauchyProblem {
 			unsigned int i = 0;
 			RK1.seta(1);
 
+			f2_list->Add(curPoint1.x, curPoint1.y);
+
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
 			dataGridView1->Rows[i]->Cells[1]->Value = itx;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+			
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
-				point curPointCopy;
-				curPointCopy.x = curPoint.x;
-				curPointCopy.y = curPoint.y;
+				point curPointCopy1;
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
+
 				// считаем точку по обычному
-				curPoint = RK1.Calculate(curPoint, func);
+				curPoint1 = RK1.Calculate(curPoint1, func);
+
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
 				RK1.seth(h);
 
-				f2_list->Add(curPoint.x, curPoint.y);
+				f2_list->Add(curPoint1.x, curPoint1.y);
 
-				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
+				double controlValue = RK1.giveControlValue(curPoint1, curPointCopy1);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
-				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint1.y - curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 
-				// статистика
+				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
 				finalIter = i;
 				lastPoint = itx;
-				if (abs(controlValue * ORDER) > maxOLP) maxOLP = abs(controlValue * ORDER);
+
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
@@ -926,7 +961,7 @@ namespace CauchyProblem {
 
 		if ((func == task2) && (isEps))
 		{
-			f2_list->Add(curPoint.x, curPoint.y);
+			f2_list->Add(curPoint1.x, curPoint1.y);
 
 			dataGridView1->Rows->Clear();
 
@@ -938,54 +973,62 @@ namespace CauchyProblem {
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
 			dataGridView1->Rows[i]->Cells[1]->Value = itx;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
-				point curPointCopy;
-				curPointCopy.x = curPoint.x;
-				curPointCopy.y = curPoint.y;
-				point curPointBack;
-				curPointBack.x = curPoint.x;
-				curPointBack.y = curPoint.y;
+				point curPointCopy1;
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
+				point curPointBack1;
+				curPointBack1.x = curPoint1.x;
+				curPointBack1.y = curPoint1.y;
+
 				// считаем точку по обычному
-				curPoint = RK1.Calculate(curPoint, func);
+				curPoint1 = RK1.Calculate(curPoint1, func);
+
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
-				curPointCopy = RK1.Calculate(curPointCopy, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
+				curPointCopy1 = RK1.Calculate(curPointCopy1, func);
 				RK1.seth(h);
+
 				bool c1 = false;
 				bool c2 = false;
 
 				// корректировка шага
-				curPoint = RK1.localErrorConrol(curPoint, curPointCopy, curPointBack);
+				curPoint1 = RK1.localErrorConrol(curPoint1, curPointCopy1, curPointBack1);
+				double oldh = h;
 				if (0.5 * h == RK1.giveh())
 				{
-					itx -= h * 0.5;
+					itx -= h;
 					h = h * 0.5;
 					c1 = true;
 				}
 				else if (2.0 * h == RK1.giveh())
 				{
+					f2_list->Add(curPoint1.x, curPoint1.y);
 					h = 2.0 * h;
 					c2 = true;
 				}
+				else if (h == RK1.giveh())
+				{
+					f2_list->Add(curPoint1.x, curPoint1.y);
+				}
 
-				f2_list->Add(curPoint.x, curPoint.y);
-
-				double controlValue = RK1.giveControlValue(curPoint, curPointCopy);
+				double controlValue = RK1.giveControlValue(curPoint1, curPointCopy1);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
-				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = curPoint.y - curPointCopy.y;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
+				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
+				dataGridView1->Rows[i]->Cells[4]->Value = curPoint1.y - curPointCopy1.y;
 				dataGridView1->Rows[i]->Cells[8]->Value = controlValue * ORDER;
-				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[9]->Value = oldh;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
 				if (c1)
@@ -1000,22 +1043,25 @@ namespace CauchyProblem {
 					sumC2 += 1;
 				}
 
-				// статистика
-				finalIter = i;
-				lastPoint = itx;
 				if ((abs(controlValue * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue * ORDER);
 
-				if (h > maxh)
+				if (oldh > maxh)
 				{
-					maxh = h;
+					maxh = oldh;
 					xmaxh = itx;
 				}
 
-				if (h < minh)
+				if (oldh < minh)
 				{
-					minh = h;
+					minh = oldh;
 					xminh = itx;
 				}
+
+				finalIter = i;
+				lastPoint = itx;
+
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
@@ -1039,8 +1085,8 @@ namespace CauchyProblem {
 			curPoint2.x = xmin;
 			curPoint2.y = v2;
 
-			f1_list->Add(curPoint.y, curPoint2.y);
-			f2_list->Add(curPoint.x, curPoint.y);
+			f1_list->Add(curPoint1.y, curPoint2.y);
+			f2_list->Add(curPoint1.x, curPoint1.y);
 			f3_list->Add(curPoint2.x, curPoint2.y);
 
 			double a = Convert::ToDouble(textBox8->Text);
@@ -1051,30 +1097,33 @@ namespace CauchyProblem {
 
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
-			dataGridView1->Rows[i]->Cells[1]->Value = curPoint2.x;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[1]->Value = curPoint1.x;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 			dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
-				point curPointCopy1, curPointCopy2;
-				point curPointCount1, curPointCount2;
-				curPointCopy1.x = curPoint.x;
-				curPointCopy1.y = curPoint.y;
+				point curPointCopy1, curPointCopy2;					// для счёта половинным шагом
+				point curPointCount1, curPointCount2;				// вспомогательные точки для вычисления
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
 				curPointCopy2.x = curPoint2.x;
 				curPointCopy2.y = curPoint2.y;
-				curPointCount1.x = curPoint.x;
-				curPointCount1.y = curPoint.y;
+				curPointCount1.x = curPoint1.x;
+				curPointCount1.y = curPoint1.y;
 				curPointCount2.x = curPoint2.x;
 				curPointCount2.y = curPoint2.y;
+
 				// считаем точку по обычному
 				RK1.seta(1);
-				curPoint = RK1.CalculateSystem(curPoint, curPointCount2, forTask3);
+				curPoint1 = RK1.CalculateSystem(curPoint1, curPointCount2, forTask3);
 				RK1.seta(a);
 				curPoint2 = RK1.CalculateSystem(curPoint2, curPointCount1, func);
 				RK1.seta(1);
+
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
 				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
@@ -1085,20 +1134,20 @@ namespace CauchyProblem {
 				RK1.seta(1);
 				RK1.seth(h);
 
-				f1_list->Add(curPoint.y, curPoint2.y);
-				f2_list->Add(curPoint.x, curPoint.y);
+				f1_list->Add(curPoint1.y, curPoint2.y);
+				f2_list->Add(curPoint1.x, curPoint1.y);
 				f3_list->Add(curPoint2.x, curPoint2.y);
 
-				double controlValue1 = abs(RK1.giveControlValue(curPoint, curPointCopy1));
-				double controlValue2 = abs(RK1.giveControlValue(curPoint2, curPointCopy2));
-				controlValue1 += controlValue2;
+				double controlValue1 = RK1.giveControlValue(curPoint1, curPointCopy1);
+				double controlValue2 = RK1.giveControlValue(curPoint2, curPointCopy2);
+				double controlValue = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint.y - curPointCopy1.y);
+				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint1.y - curPointCopy1.y);
 				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
 				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
 				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
@@ -1106,11 +1155,15 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
+				dataGridView1->Rows[i]->Cells[14]->Value = controlValue2 * ORDER;
 
-				// статистика
+				if (controlValue * ORDER > maxOLP) maxOLP = controlValue * ORDER;
+
 				finalIter = i;
 				lastPoint = itx;
-				if (abs(controlValue1 * ORDER) > maxOLP) maxOLP = abs(controlValue1 * ORDER);
+
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
@@ -1134,8 +1187,8 @@ namespace CauchyProblem {
 			curPoint2.x = xmin;
 			curPoint2.y = v2;
 
-			f1_list->Add(curPoint.y, curPoint2.y);
-			f2_list->Add(curPoint.x, curPoint.y);
+			f1_list->Add(curPoint1.y, curPoint2.y);
+			f2_list->Add(curPoint1.x, curPoint1.y);
 			f3_list->Add(curPoint2.x, curPoint2.y);
 
 			double a = Convert::ToDouble(textBox8->Text);
@@ -1150,93 +1203,104 @@ namespace CauchyProblem {
 			dataGridView1->Rows->Add();
 			dataGridView1->Rows[i]->Cells[0]->Value = i;
 			dataGridView1->Rows[i]->Cells[1]->Value = itx;
-			dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+			dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 			dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
+
+			i++;
+			itx += h;
 
 			while ((itx < xmax) && (i < maxIter))
 			{
-				i++;
-				itx += h;
 				point curPointCopy1, curPointCopy2;
-				curPointCopy1.x = curPoint.x;
-				curPointCopy1.y = curPoint.y;
+				curPointCopy1.x = curPoint1.x;
+				curPointCopy1.y = curPoint1.y;
 				curPointCopy2.x = curPoint2.x;
 				curPointCopy2.y = curPoint2.y;
+
 				point curPointBack1;
-				curPointBack1.x = curPoint.x;
-				curPointBack1.y = curPoint.y;
+				curPointBack1.x = curPoint1.x;
+				curPointBack1.y = curPoint1.y;
 				point curPointBack2;
 				curPointBack2.x = curPoint2.x;
 				curPointBack2.y = curPoint2.y;
-				point curPoint1forCount, curPoint2forCount;
-				curPoint1forCount.x = curPoint.x;
-				curPoint1forCount.y = curPoint.y;
-				curPoint2forCount.x = curPoint2.x;
-				curPoint2forCount.y = curPoint2.y;
+
+				point curPointCount1, curPointCount2;
+				curPointCount1.x = curPoint1.x;
+				curPointCount1.y = curPoint1.y;
+				curPointCount2.x = curPoint2.x;
+				curPointCount2.y = curPoint2.y;
+
 				// считаем точку по обычному
-				curPoint = RK1.Calculate(curPoint2forCount, forTask3);
-				curPoint2 = RK1.Calculate(curPoint1forCount, func);
+				RK1.seta(1);
+				curPoint1 = RK1.CalculateSystem(curPoint1, curPointCount2, forTask3);
+				RK1.seta(a);
+				curPoint2 = RK1.CalculateSystem(curPoint2, curPointCount1, func);
+				RK1.seta(1);
+
 				// считаем точку двойным шагом
 				RK1.seth(0.5 * h);
-				curPointCopy1 = RK1.Calculate(curPoint2forCount, forTask3);
-				curPointCopy1 = RK1.Calculate(curPoint2forCount, forTask3);
-				curPointCopy2 = RK1.Calculate(curPoint1forCount, func);
-				curPointCopy2 = RK1.Calculate(curPoint1forCount, func);
+				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
+				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
+				RK1.seta(a);
+				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func);
+				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func);
+				RK1.seta(1);
 				RK1.seth(h);
+
 				bool c1 = false;
 				bool c2 = false;
-
-				curPoint = RK1.localErrorConrol(curPoint, curPointCopy1, curPointBack1);
-				double h1 = RK1.giveh();
-				RK1.seth(h);
-				curPoint2 = RK1.localErrorConrol(curPoint2, curPointCopy2, curPointBack2);
-				double h2 = RK1.giveh();
-				RK1.seth(h);
 
 				// отдельный метод контроля локальной погрешности
 				point backUpPoint;
 				backUpPoint.x = curPointBack1.y;
 				backUpPoint.y = curPointBack2.y;
 
-				backUpPoint = RK1.localErrorControlForSystem(curPoint, curPointCopy1, curPoint2, curPointCopy2, backUpPoint);
+				backUpPoint = RK1.localErrorControlForSystem(curPoint1, curPointCopy1, curPoint2, curPointCopy2, backUpPoint);
+				double oldh = h;
 
 				if (0.5 * h == RK1.giveh())
 				{
-					curPoint.x = itx - h;
+					curPoint1.x = itx - h;
 					curPoint2.x = itx - h;
-					itx -= h * 0.5;
+					itx -= h;
 					h = h * 0.5;
-					curPoint.y = backUpPoint.x;
+					curPoint1.y = backUpPoint.x;
 					curPoint2.y = backUpPoint.y;
 					c1 = true;
 				}
 				else if (2.0 * h == RK1.giveh())
 				{
+					f1_list->Add(curPoint1.y, curPoint2.y);
+					f2_list->Add(curPoint1.x, curPoint1.y);
+					f3_list->Add(curPoint2.x, curPoint2.y);
 					h = 2.0 * h;
 					c2 = true;
 				}
+				else if (h == RK1.giveh())
+				{
+					f1_list->Add(curPoint1.y, curPoint2.y);
+					f2_list->Add(curPoint1.x, curPoint1.y);
+					f3_list->Add(curPoint2.x, curPoint2.y);
+				}
 
-				f1_list->Add(curPoint.y, curPoint2.y);
-				f2_list->Add(curPoint.x, curPoint.y);
-				f3_list->Add(curPoint2.x, curPoint2.y);
-
-				double controlValue1 = abs(RK1.giveControlValue(curPoint, curPointCopy1));
-				double controlValue2 = abs(RK1.giveControlValue(curPoint2, curPointCopy2));
-				controlValue1 += controlValue2;
+				double controlValue1 = RK1.giveControlValue(curPoint1, curPointCopy1);
+				double controlValue2 = RK1.giveControlValue(curPoint2, curPointCopy2);
+				double controlValue = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
 				dataGridView1->Rows[i]->Cells[1]->Value = itx;
-				dataGridView1->Rows[i]->Cells[2]->Value = curPoint.y;
+				dataGridView1->Rows[i]->Cells[2]->Value = curPoint1.y;
 				dataGridView1->Rows[i]->Cells[3]->Value = curPointCopy1.y;
-				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint.y - curPointCopy1.y);
+				dataGridView1->Rows[i]->Cells[4]->Value = (curPoint1.y - curPointCopy1.y);
 				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
 				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
 				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
 				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * ORDER;
-				dataGridView1->Rows[i]->Cells[9]->Value = h;
+				dataGridView1->Rows[i]->Cells[9]->Value = oldh;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
+				dataGridView1->Rows[i]->Cells[14]->Value = controlValue2 * ORDER;
 				if (c1)
 				{
 					dataGridView1->Rows[i]->Cells[10]->Value = 1;
@@ -1249,22 +1313,25 @@ namespace CauchyProblem {
 					sumC2 += 1;
 				}
 
-				// статистика
-				finalIter = i;
-				lastPoint = itx;
-				if ((abs(controlValue1 * ORDER) > maxOLP) && (!c1)) maxOLP = abs(controlValue1 * ORDER);
+				if ((controlValue * ORDER > maxOLP) && (!c1)) maxOLP = controlValue * ORDER;
 
-				if (h > maxh)
+				if (oldh > maxh)
 				{
-					maxh = h;
+					maxh = oldh;
 					xmaxh = itx;
 				}
 
-				if (h < minh)
+				if (oldh < minh)
 				{
-					minh = h;
+					minh = oldh;
 					xminh = itx;
 				}
+
+				finalIter = i;
+				lastPoint = itx;
+
+				i++;
+				itx += h;
 			}
 
 			dataGridView2->Rows->Add();
