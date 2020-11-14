@@ -58,11 +58,33 @@ point RungeKutta::Calculate(point& out, double(*func)(point&))
 
 point RungeKutta::CalculateSystem(point& out1, point& out2, double(*func)(point&))
 {
-	double k1, k2, k3, k4;
+	double k1, k2, k3, k4;						// для расчёта первого численного решения
+	double q1, q2, q3, q4;						// для расчёта второго численного решения
 
-	k1 = func(out2);
+	point CountPoint;
 
-	point curPoint1;
+	k1 = out2.y;		//01
+	q1 = func(out1);	//00
+
+	CountPoint.x = out1.x + h * 0.5;
+	CountPoint.y = out1.y + h * 0.5 * k1;
+	q2 = func(CountPoint);								//10
+	k2 = out2.y + q1 * h * 0.5;							//11
+
+	CountPoint.y = out1.y + h * 0.5 * k2;
+	q3 = func(CountPoint);
+	k3 = out2.y + q2 * h * 0.5;
+
+	CountPoint.y = out1.y + k3 * h;
+	q4 = func(CountPoint);
+	k4 = out2.y + q3 * h;
+	
+	point ResultPoint;
+	ResultPoint.x = out2.y + h * a / 6 * (q1 + 2 * q2 + 2 * q3 + q4);
+	ResultPoint.y = out1.y + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4);
+	return ResultPoint;
+
+	/* point curPoint1;
 	point curPoint2;
 	curPoint1.x = out1.x + 0.5 * h;
 	curPoint2.x = out2.x + 0.5 * h;
@@ -82,7 +104,7 @@ point RungeKutta::CalculateSystem(point& out1, point& out2, double(*func)(point&
 	k4 = func(curPoint2);
 
 	curPoint1.y = out1.y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) * a * h / 6.0;
-	return curPoint1;
+	return curPoint1; */
 }
 
 double RungeKutta::giveControlValue(const point& out1, const point& out2)

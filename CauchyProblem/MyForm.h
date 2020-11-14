@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <vector>
 #include "RungeKutta.h"
+
+using namespace std;
 
 namespace CauchyProblem {
 
@@ -609,6 +612,77 @@ namespace CauchyProblem {
 			return c*exp(-0.5 * x);
 		}
 
+		double f_1(double un, double a)
+		{
+			double g = 9.8; // заменить на текстбокс
+			return -a * sin(un); //z'
+
+		}
+
+		vector<double> rungeKutta(double u0, double z0, double h, double a)
+		{
+			double coeff[4][2]; // 0 for q/z, 1 for k/u
+			vector<double> res(2);
+			coeff[0][0] = f_1(u0, a); // q0
+			coeff[0][1] = z0; //k0
+			coeff[1][0] = f_1(u0 + z0 * h / 2, a);//q1
+			coeff[1][1] = z0 + coeff[0][0] * h / 2;//k1
+			coeff[2][0] = f_1(u0 + coeff[1][1] * h / 2, a);//q2
+			coeff[2][1] = z0 + coeff[1][0] * h / 2; // k2
+			coeff[3][0] = f_1(u0 + coeff[2][1] * h, a);//q3
+			coeff[3][1] = z0 + coeff[2][0] * h;//k3
+			res[0] = z0 + h / 6 * (coeff[0][0] + 2 * coeff[1][0] + 2 * coeff[2][0] + coeff[3][0]);
+			res[1] = u0 + h / 6 * (coeff[0][1] + 2 * coeff[1][1] + 2 * coeff[2][1] + coeff[3][1]);
+			return res;
+		}
+
+		double cValue(double u, double z, double u_, double z_)
+		{
+			double S1, S2, S;
+			S1 = abs(z_ - z);
+			S2 = abs(u_ - u);
+
+			S = sqrt(S1 * S1 + S2 * S2) / 15;
+			return S;
+		}
+
+		double errorControl(double& u0, double& z0, double h, double eps, double& locErr, double a)
+		{
+			double z, u, z_, u_, S1, S2, S;
+			vector<double> rk1, rk2;
+			rk1 = rungeKutta(u0, z0, h, a);
+			z = rk1[0];
+			u = rk1[1];
+			z_ = z0;
+			u_ = u0;
+			for (int i = 0; i < 2; i++)
+			{
+				rk2 = rungeKutta(u_, z_, h / 2, a);
+				z_ = rk2[0];
+				u_ = rk2[1];
+			}
+
+			S1 = abs(z_ - z);
+			S2 = abs(u_ - u);
+
+			S = sqrt(S1 * S1 + S2 * S2) / 15;
+			locErr = S * 16;
+			if (S > eps)
+			{
+				return h / 2;
+			} // принимаем точку 
+			else
+			{
+				u0 = u;
+				z0 = z;
+				if (S < (eps / 32))
+				{
+					return 2 * h;
+				}
+				return h;
+			}
+		}
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
 		// поставить потом обработчик, чтобы кнопочка была неактивна
@@ -1090,6 +1164,7 @@ namespace CauchyProblem {
 			f3_list->Add(curPoint2.x, curPoint2.y);
 
 			double a = Convert::ToDouble(textBox8->Text);
+			RK1.seta(a);
 
 			dataGridView1->Rows->Clear();
 
@@ -1107,40 +1182,35 @@ namespace CauchyProblem {
 			while ((itx < xmax) && (i < maxIter))
 			{
 				point curPointCopy1, curPointCopy2;					// для счёта половинным шагом
-				point curPointCount1, curPointCount2;				// вспомогательные точки для вычисления
 				curPointCopy1.x = curPoint1.x;
 				curPointCopy1.y = curPoint1.y;
 				curPointCopy2.x = curPoint2.x;
 				curPointCopy2.y = curPoint2.y;
-				curPointCount1.x = curPoint1.x;
-				curPointCount1.y = curPoint1.y;
-				curPointCount2.x = curPoint2.x;
-				curPointCount2.y = curPoint2.y;
 
-				// считаем точку по обычному
-				RK1.seta(1);
-				curPoint1 = RK1.CalculateSystem(curPoint1, curPointCount2, forTask3);
-				RK1.seta(a);
-				curPoint2 = RK1.CalculateSystem(curPoint2, curPointCount1, func);
-				RK1.seta(1);
+				// Рунге-Кутта
+				vector<double> res;
+				res = rungeKutta(curPoint1.y, curPoint2.y, h, a);
+				curPoint1.x += h;
+				curPoint2.x += h;
+				curPoint1.y = res[1];
+				curPoint2.y = res[0];
 
-				// считаем точку двойным шагом
-				RK1.seth(0.5 * h);
-				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
-				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
-				RK1.seta(a);
-				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func);
-				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func); 
-				RK1.seta(1);
-				RK1.seth(h);
-
+				res = rungeKutta(curPointCopy1.y, curPointCopy2.y, h * 0.5, a);
+				curPointCopy1.x += h * 0.5;
+				curPointCopy2.x += h * 0.5;
+				curPointCopy1.y = res[1];
+				curPointCopy2.y = res[0];
+				res = rungeKutta(curPointCopy1.y, curPointCopy2.y, h * 0.5, a);
+				curPointCopy1.x += h * 0.5;
+				curPointCopy2.x += h * 0.5;
+				curPointCopy1.y = res[1];
+				curPointCopy2.y = res[0];
+				
 				f1_list->Add(curPoint1.y, curPoint2.y);
 				f2_list->Add(curPoint1.x, curPoint1.y);
 				f3_list->Add(curPoint2.x, curPoint2.y);
 
-				double controlValue1 = RK1.giveControlValue(curPoint1, curPointCopy1);
-				double controlValue2 = RK1.giveControlValue(curPoint2, curPointCopy2);
-				double controlValue = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
+				double controlValue = cValue(curPoint1.y, curPoint2.y, curPointCopy1.y, curPointCopy2.y);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
@@ -1151,11 +1221,11 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
 				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
 				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
-				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * ORDER;
+				dataGridView1->Rows[i]->Cells[8]->Value = (curPoint1.y - curPointCopy1.y) * 16 / 15;
 				dataGridView1->Rows[i]->Cells[9]->Value = h;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
-				dataGridView1->Rows[i]->Cells[14]->Value = controlValue2 * ORDER;
+				dataGridView1->Rows[i]->Cells[14]->Value = (curPoint2.y - curPointCopy2.y) * 16 / 15;
 
 				if (controlValue * ORDER > maxOLP) maxOLP = controlValue * ORDER;
 
@@ -1230,22 +1300,24 @@ namespace CauchyProblem {
 				curPointCount2.x = curPoint2.x;
 				curPointCount2.y = curPoint2.y;
 
-				// считаем точку по обычному
-				RK1.seta(1);
-				curPoint1 = RK1.CalculateSystem(curPoint1, curPointCount2, forTask3);
-				RK1.seta(a);
-				curPoint2 = RK1.CalculateSystem(curPoint2, curPointCount1, func);
-				RK1.seta(1);
+				// Рунге-Кутта
+				vector<double> res;
+				res = rungeKutta(curPoint1.y, curPoint2.y, h, a);
+				curPoint1.x += h;
+				curPoint2.x += h;
+				curPoint1.y = res[1];
+				curPoint2.y = res[0];
 
-				// считаем точку двойным шагом
-				RK1.seth(0.5 * h);
-				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
-				curPointCopy1 = RK1.CalculateSystem(curPointCopy1, curPointCount2, forTask3);
-				RK1.seta(a);
-				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func);
-				curPointCopy2 = RK1.CalculateSystem(curPointCopy2, curPointCount1, func);
-				RK1.seta(1);
-				RK1.seth(h);
+				res = rungeKutta(curPointCopy1.y, curPointCopy2.y, h * 0.5, a);
+				curPointCopy1.x += h * 0.5;
+				curPointCopy2.x += h * 0.5;
+				curPointCopy1.y = res[1];
+				curPointCopy2.y = res[0];
+				res = rungeKutta(curPointCopy1.y, curPointCopy2.y, h * 0.5, a);
+				curPointCopy1.x += h * 0.5;
+				curPointCopy2.x += h * 0.5;
+				curPointCopy1.y = res[1];
+				curPointCopy2.y = res[0];
 
 				bool c1 = false;
 				bool c2 = false;
@@ -1285,7 +1357,7 @@ namespace CauchyProblem {
 
 				double controlValue1 = RK1.giveControlValue(curPoint1, curPointCopy1);
 				double controlValue2 = RK1.giveControlValue(curPoint2, curPointCopy2);
-				double controlValue = sqrt(controlValue1 * controlValue1 + controlValue2 * controlValue2);
+				double controlValue = cValue(curPoint1.y, curPoint2.y, curPointCopy1.y, curPointCopy2.y);
 
 				dataGridView1->Rows->Add();
 				dataGridView1->Rows[i]->Cells[0]->Value = i;
@@ -1296,11 +1368,11 @@ namespace CauchyProblem {
 				dataGridView1->Rows[i]->Cells[5]->Value = curPoint2.y;
 				dataGridView1->Rows[i]->Cells[6]->Value = curPointCopy2.y;
 				dataGridView1->Rows[i]->Cells[7]->Value = (curPoint2.y - curPointCopy2.y);
-				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * ORDER;
+				dataGridView1->Rows[i]->Cells[8]->Value = controlValue1 * 16;
 				dataGridView1->Rows[i]->Cells[9]->Value = oldh;
 				dataGridView1->Rows[i]->Cells[10]->Value = 0;
 				dataGridView1->Rows[i]->Cells[11]->Value = 0;
-				dataGridView1->Rows[i]->Cells[14]->Value = controlValue2 * ORDER;
+				dataGridView1->Rows[i]->Cells[14]->Value = controlValue2 * 16;
 				if (c1)
 				{
 					dataGridView1->Rows[i]->Cells[10]->Value = 1;

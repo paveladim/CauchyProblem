@@ -1,15 +1,15 @@
 ﻿  MyForm.cpp
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(723,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(724,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(833,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(834,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(938,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(939,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1032,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1033,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1156,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1157,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1301,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
-D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1302,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(797,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(798,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(907,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(908,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1012,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1013,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1106,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1107,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1226,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1227,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1373,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+D:\prog\CauchyProblem\CauchyProblem\MyForm.h(1374,1): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   CauchyProblem.vcxproj -> D:\prog\CauchyProblem\Debug\CauchyProblem.exe
